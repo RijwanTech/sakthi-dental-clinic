@@ -1,0 +1,1698 @@
+/* =========================================
+   SAKTHI DENTAL CLINIC
+   Premium Lavender + White Design
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #7351b5;
+  --primary-dark: #51358c;
+  --primary-light: #eee7fb;
+  --lavender: #f7f4fc;
+  --white: #ffffff;
+  --heading: #241d35;
+  --text: #696477;
+  --border: #eae5f2;
+  --shadow: 0 12px 35px rgba(65, 42, 105, 0.09);
+  --shadow-hover: 0 20px 45px rgba(65, 42, 105, 0.15);
+  --radius: 20px;
+  --container: 1180px;
+}
+
+/* RESET */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: var(--white);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 15px;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Manrope", sans-serif;
+  color: var(--heading);
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 4.8vw, 4.25rem);
+  letter-spacing: -2px;
+}
+
+h2 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  letter-spacing: -1.2px;
+}
+
+h3 {
+  font-size: 1.13rem;
+}
+
+p {
+  margin-bottom: 14px;
+}
+
+.container {
+  width: min(var(--container), calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.section {
+  padding: 95px 0;
+}
+
+.section-heading {
+  max-width: 690px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.section-heading h2 {
+  margin: 12px 0 16px;
+}
+
+.section-heading > p:last-child {
+  max-width: 620px;
+  margin-inline: auto;
+}
+
+.eyebrow {
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+/* BUTTONS */
+
+.btn {
+  min-height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 13px 24px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.91rem;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-primary {
+  color: var(--white);
+  background: var(--primary);
+  box-shadow: 0 8px 20px rgba(115, 81, 181, 0.2);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  box-shadow: 0 12px 25px rgba(115, 81, 181, 0.25);
+}
+
+.btn-secondary {
+  color: var(--primary-dark);
+  background: var(--white);
+  border-color: #ded2f1;
+}
+
+.btn-secondary:hover {
+  background: var(--primary-light);
+}
+
+.btn-light {
+  color: var(--primary-dark);
+  background: var(--white);
+}
+
+.btn-light:hover {
+  background: #f1eaff;
+}
+
+.btn-outline-light {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.55);
+  background: transparent;
+}
+
+.btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 0.88rem;
+  transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.text-link:hover {
+  gap: 11px;
+  color: var(--primary-dark);
+}
+
+/* =========================================
+   HEADER AND NAVIGATION
+========================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(234, 229, 242, 0.9);
+}
+
+.header-container {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--heading);
+  font-family: "Manrope", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.25;
+  flex-shrink: 0;
+}
+
+.clinic-logo {
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+}
+
+.nav-links > a:not(.btn) {
+  position: relative;
+  color: #625c70;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.nav-links > a:not(.btn):hover,
+.nav-links > a.active {
+  color: var(--primary);
+}
+
+.nav-links > a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -9px;
+  height: 2px;
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+.nav-cta {
+  min-height: 44px;
+  padding: 10px 17px;
+  font-size: 0.82rem;
+}
+
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  border-radius: 10px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 19px;
+  height: 2px;
+  background: var(--heading);
+  border-radius: 3px;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 75px 0 80px;
+  background:
+    radial-gradient(ellipse at 88% 10%, rgba(204, 184, 242, 0.35), transparent 35%),
+    linear-gradient(135deg, #fbf9ff 0%, #f4effd 53%, #fff 100%);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  top: -180px;
+  left: -140px;
+  border: 1px solid rgba(115, 81, 181, 0.1);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+  align-items: center;
+  gap: 65px;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  margin-bottom: 22px;
+}
+
+.hero-content h1 span {
+  display: block;
+  color: var(--primary);
+}
+
+.hero-description {
+  max-width: 550px;
+  font-size: 1.04rem;
+  line-height: 1.9;
+  margin-bottom: 28px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-bottom: 31px;
+}
+
+.hero-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+}
+
+.hero-highlight {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.79rem;
+  font-weight: 700;
+  color: #625b73;
+}
+
+.highlight-icon {
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+.hero-image {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.hero-image > img {
+  width: 100%;
+  height: 490px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 28px;
+  box-shadow: 0 25px 65px rgba(57, 35, 93, 0.19);
+}
+
+.hero-image-caption {
+  position: absolute;
+  left: -28px;
+  bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: min(310px, 85%);
+  padding: 18px;
+  background: var(--white);
+  border: 1px solid rgba(234, 229, 242, 0.9);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.caption-icon {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  color: var(--primary);
+  background: var(--primary-light);
+  font-size: 1.4rem;
+}
+
+.hero-image-caption strong {
+  display: block;
+  color: var(--heading);
+  font-size: 0.9rem;
+}
+
+.hero-image-caption p {
+  margin: 3px 0 0;
+  font-size: 0.77rem;
+  line-height: 1.5;
+}
+
+/* =========================================
+   INTRODUCTION
+========================================= */
+
+.intro-section {
+  background: var(--white);
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 0.8fr;
+  align-items: center;
+  gap: 70px;
+}
+
+.intro-content h2 {
+  margin-bottom: 22px;
+}
+
+.intro-content p {
+  line-height: 1.9;
+}
+
+.intro-content .text-link {
+  margin-top: 8px;
+}
+
+.intro-card {
+  padding: 36px;
+  border: 1px solid #e7ddf8;
+  border-radius: 22px;
+  background: linear-gradient(145deg, #f8f4ff, #fff);
+  box-shadow: var(--shadow);
+}
+
+.intro-card-icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 24px;
+  border-radius: 17px;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 1.8rem;
+}
+
+.intro-card h3 {
+  margin-bottom: 13px;
+  font-size: 1.35rem;
+}
+
+.intro-card p {
+  line-height: 1.8;
+}
+
+.intro-card .text-link {
+  margin-top: 8px;
+}
+
+/* =========================================
+   WHY CHOOSE US
+========================================= */
+
+.why-section {
+  background: var(--lavender);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.feature-card {
+  padding: 29px 23px;
+  background: var(--white);
+  border: 1px solid rgba(231, 221, 248, 0.9);
+  border-radius: var(--radius);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+}
+
+.feature-icon {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 21px;
+  background: var(--primary-light);
+  color: var(--primary);
+  border-radius: 15px;
+  font-size: 1.6rem;
+}
+
+.feature-card h3 {
+  margin-bottom: 12px;
+}
+
+.feature-card p {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+/* =========================================
+   TREATMENT CARDS
+========================================= */
+
+.treatments-section {
+  background: var(--white);
+}
+
+.treatments-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 27px;
+  align-items: stretch;
+}
+
+.treatment-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 5px 20px rgba(43, 28, 72, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.treatment-card:hover {
+  transform: translateY(-7px);
+  box-shadow: var(--shadow-hover);
+}
+
+.treatment-card-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #f1ebfa;
+}
+
+.treatment-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.treatment-card:hover .treatment-card-image img {
+  transform: scale(1.05);
+}
+
+.treatment-card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 23px;
+}
+
+.treatment-card-content h3 {
+  margin-bottom: 11px;
+  font-size: 1.08rem;
+  line-height: 1.45;
+}
+
+.treatment-card-content p {
+  flex: 1;
+  margin-bottom: 18px;
+  font-size: 0.89rem;
+  line-height: 1.8;
+}
+
+.treatment-card-content .text-link {
+  margin-top: auto;
+}
+
+.section-action {
+  display: flex;
+  justify-content: center;
+  margin-top: 44px;
+}
+
+/* =========================================
+   AMENITIES
+========================================= */
+
+.amenities-section {
+  background: var(--lavender);
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 23px;
+}
+
+.amenity-card {
+  padding: 29px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.amenity-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.amenity-image {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  padding: 11px;
+  margin-bottom: 21px;
+  background: var(--primary-light);
+  border-radius: 15px;
+}
+
+.amenity-card h3 {
+  margin-bottom: 11px;
+}
+
+.amenity-card p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.amenity-card .text-link {
+  margin-top: 3px;
+}
+
+/* =========================================
+   CLINIC INTRO / DENTIST SECTION
+========================================= */
+
+.dentist-section {
+  background: var(--white);
+}
+
+.dentist-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: center;
+  gap: 75px;
+}
+
+.dentist-image {
+  min-height: 340px;
+  display: grid;
+  place-items: center;
+  padding: 45px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 30% 20%, #fff 0, transparent 40%),
+    linear-gradient(140deg, #eee5fc, #f9f6ff);
+  border-radius: 26px;
+}
+
+.dentist-image img {
+  width: 100%;
+  max-width: 270px;
+  max-height: 280px;
+  object-fit: contain;
+}
+
+.dentist-content h2 {
+  margin-bottom: 22px;
+}
+
+.dentist-content p {
+  line-height: 1.9;
+}
+
+.dentist-content .btn {
+  margin-top: 10px;
+}
+
+/* =========================================
+   FAQ
+========================================= */
+
+.faq-section {
+  background: #fbf9fe;
+}
+
+.faq-list {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 14px;
+  padding: 0 23px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 13px;
+}
+
+.faq-item summary {
+  position: relative;
+  padding: 20px 32px 20px 0;
+  color: var(--heading);
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+}
+
+.faq-item p {
+  padding: 0 0 20px;
+  margin: 0;
+  line-height: 1.8;
+}
+
+/* =========================================
+   CALL TO ACTION
+========================================= */
+
+.cta-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(115deg, #5d3b9d, #8562c5);
+}
+
+.cta-section::after {
+  content: "";
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  right: -120px;
+  top: -190px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+}
+
+.cta-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 45px;
+}
+
+.cta-content {
+  max-width: 680px;
+}
+
+.cta-content .eyebrow {
+  color: #e2d4ff;
+}
+
+.cta-content h2 {
+  margin-bottom: 17px;
+  color: var(--white);
+}
+
+.cta-content p {
+  max-width: 610px;
+  margin-bottom: 0;
+  color: #eee6ff;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+  background: #211a30;
+  color: #c6bed3;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.7fr 1fr;
+  gap: 65px;
+  padding-top: 70px;
+  padding-bottom: 55px;
+}
+
+.footer-brand {
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.footer-brand .clinic-logo {
+  background: var(--white);
+  border-radius: 10px;
+}
+
+.footer-about p {
+  max-width: 330px;
+  margin-top: 18px;
+  line-height: 1.9;
+  font-size: 0.9rem;
+}
+
+.footer-links,
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.footer-links h3,
+.footer-contact h3 {
+  color: var(--white);
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.footer-links a,
+.footer-contact a {
+  font-size: 0.88rem;
+  transition: color 0.2s ease;
+  overflow-wrap: anywhere;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+  color: #d9c5ff;
+}
+
+.footer-contact p {
+  margin-bottom: 5px;
+  line-height: 1.8;
+  font-size: 0.88rem;
+}
+
+.footer-contact strong {
+  color: var(--white);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom-content {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-bottom p,
+.footer-bottom a {
+  margin: 0;
+  font-size: 0.82rem;
+}
+
+.footer-bottom a:hover {
+  color: var(--white);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1050px) {
+  .nav-links {
+    gap: 17px;
+  }
+
+  .nav-links > a:not(.btn) {
+    font-size: 0.84rem;
+  }
+
+  .brand {
+    font-size: 0.95rem;
+  }
+
+  .clinic-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .hero-container {
+    gap: 38px;
+  }
+
+  .hero-image > img {
+    height: 420px;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-grid {
+    gap: 35px;
+  }
+}
+
+@media (max-width: 800px) {
+  .section {
+    padding: 70px 0;
+  }
+
+  .header-container {
+    min-height: 76px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    align-items: stretch;
+    gap: 0;
+    padding: 12px 24px 24px;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 15px 25px rgba(35, 22, 57, 0.08);
+  }
+
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-links > a:not(.btn) {
+    padding: 13px 0;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #f1edf7;
+  }
+
+  .nav-links > a.active::after {
+    display: none;
+  }
+
+  .nav-cta {
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  .hero {
+    padding: 58px 0 65px;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-content {
+    max-width: 680px;
+  }
+
+  .hero-image {
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .hero-image > img {
+    height: 410px;
+  }
+
+  .hero-image-caption {
+    left: 18px;
+  }
+
+  .intro-grid,
+  .dentist-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .intro-card {
+    max-width: 560px;
+  }
+
+  .treatments-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .amenities-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dentist-image {
+    min-height: 280px;
+  }
+
+  .dentist-image img {
+    max-height: 230px;
+  }
+
+  .cta-container {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .container {
+    width: calc(100% - 34px);
+  }
+
+  .section {
+    padding: 58px 0;
+  }
+
+  .section-heading {
+    margin-bottom: 32px;
+  }
+
+  .section-heading h2 {
+    font-size: 1.85rem;
+  }
+
+  h1 {
+    font-size: 2.55rem;
+    letter-spacing: -1.4px;
+  }
+
+  h2 {
+    font-size: 1.9rem;
+  }
+
+  .brand {
+    gap: 9px;
+    font-size: 0.88rem;
+  }
+
+  .clinic-logo {
+    width: 43px;
+    height: 43px;
+  }
+
+  .hero {
+    padding: 43px 0 50px;
+  }
+
+  .hero-container {
+    gap: 32px;
+  }
+
+  .hero-description {
+    font-size: 0.96rem;
+  }
+
+  .hero-buttons {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
+
+  .hero-highlights {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hero-image > img {
+    height: 290px;
+    border-radius: 19px;
+  }
+
+  .hero-image-caption {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: calc(100% - 20px);
+    margin: -30px auto 0;
+    padding: 14px;
+  }
+
+  .intro-card {
+    padding: 26px;
+  }
+
+  .features-grid,
+  .treatments-grid,
+  .amenities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-card {
+    padding: 25px;
+  }
+
+  .treatments-grid {
+    gap: 22px;
+  }
+
+  .treatment-card-image {
+    aspect-ratio: 16 / 10;
+  }
+
+  .treatment-card-content {
+    padding: 21px;
+  }
+
+  .amenity-card {
+    padding: 25px;
+  }
+
+  .dentist-image {
+    min-height: 230px;
+    padding: 30px;
+  }
+
+  .faq-item {
+    padding: 0 17px;
+  }
+
+  .faq-item summary {
+    font-size: 0.92rem;
+  }
+
+  .cta-buttons {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding-top: 48px;
+    padding-bottom: 40px;
+  }
+
+  .footer-bottom-content {
+    min-height: 85px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 7px;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+```css
+/* ===== PREMIUM AMENITIES SECTION ===== */
+
+.amenities-section {
+  padding: 85px 24px;
+  background: linear-gradient(
+    180deg,
+    #fbf9ff 0%,
+    #f2ecfc 100%
+  );
+}
+
+.amenities-container {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.amenities-heading {
+  max-width: 650px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.section-label {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #7351b5;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.amenities-heading h2 {
+  margin: 0 0 16px;
+  color: #302344;
+  font-size: clamp(30px, 4vw, 42px);
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.amenities-heading h2 span {
+  color: #7351b5;
+}
+
+.amenities-heading p {
+  max-width: 570px;
+  margin: 0 auto;
+  color: #70687c;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  align-items: stretch;
+}
+
+.amenity-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  padding: 32px 23px 30px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #ebe3f8;
+  border-radius: 22px;
+  box-shadow: 0 8px 25px rgba(75, 48, 119, 0.06);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.amenity-card:hover {
+  transform: translateY(-7px);
+  border-color: #cbb8ed;
+  box-shadow: 0 18px 38px rgba(75, 48, 119, 0.13);
+}
+
+.amenity-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 105px;
+  height: 105px;
+  margin-bottom: 23px;
+  flex-shrink: 0;
+  background: #f0e8fc;
+  border: 1px solid #e7dcf8;
+  border-radius: 50%;
+}
+
+.amenity-icon img {
+  display: block;
+  width: 65px;
+  height: 65px;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.amenity-card h3 {
+  margin: 0 0 12px;
+  color: #43305f;
+  font-size: 19px;
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+.amenity-card p {
+  margin: 0;
+  color: #756d81;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .amenities-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .amenities-section {
+    padding: 65px 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+  .amenities-section {
+    padding: 55px 16px;
+  }
+
+  .amenities-heading {
+    margin-bottom: 32px;
+  }
+
+  .amenities-heading p {
+    font-size: 14px;
+  }
+
+  .amenities-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 17px;
+  }
+
+  .amenity-card {
+    padding: 26px 22px;
+    border-radius: 18px;
+  }
+
+  .amenity-icon {
+    width: 88px;
+    height: 88px;
+    margin-bottom: 18px;
+  }
+
+  .amenity-icon img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .amenity-card h3 {
+    font-size: 18px;
+  }
+}
+
+/* =========================================
+   SAKTHI DENTAL CLINIC - BANNER SLIDER
+========================================= */
+
+.banner-slider {
+  position: relative;
+  width: 100%;
+  height: 390px;
+  overflow: hidden;
+  background: #302344;
+  isolation: isolate;
+}
+
+.banner-slide {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.banner-slide.active {
+  z-index: 1;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.banner-slide > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(30, 20, 45, 0.82) 0%,
+    rgba(30, 20, 45, 0.58) 48%,
+    rgba(30, 20, 45, 0.12) 100%
+  );
+}
+
+.banner-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 760px;
+  padding: 28px 8%;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.banner-tag {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 7px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 30px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.banner-content h1 {
+  max-width: 570px;
+  margin: 0 0 12px;
+  color: #fff;
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+}
+
+.banner-content p {
+  max-width: 420px;
+  margin: 0 0 20px;
+  color: #f7f2ff;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.banner-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 11px 22px;
+  border: 1px solid #fff;
+  border-radius: 7px;
+  background: #7351b5;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.banner-btn:hover {
+  background: #51358c;
+  transform: translateY(-2px);
+}
+
+/* Previous and next arrows */
+
+.banner-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  transform: translateY(-50%);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  background: rgba(45, 30, 65, 0.45);
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: background 0.25s ease;
+}
+
+.banner-arrow:hover {
+  background: #7351b5;
+}
+
+.banner-prev {
+  left: 16px;
+}
+
+.banner-next {
+  right: 16px;
+}
+
+/* Navigation dots */
+
+.banner-dots {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  transform: translateX(-50%);
+}
+
+.banner-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition: width 0.25s ease, background 0.25s ease;
+}
+
+.banner-dot.active {
+  width: 24px;
+  border-radius: 8px;
+  background: #fff;
+}
+
+/* Keyboard accessibility */
+
+.banner-arrow:focus-visible,
+.banner-dot:focus-visible,
+.banner-btn:focus-visible {
+  outline: 3px solid #e4d5ff;
+  outline-offset: 3px;
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+  .banner-slider {
+    height: 340px;
+  }
+
+  .banner-content {
+    padding: 25px 8%;
+  }
+
+  .banner-content h1 {
+    max-width: 440px;
+    font-size: clamp(29px, 5.5vw, 38px);
+  }
+
+  .banner-content p {
+    max-width: 350px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .banner-prev {
+    left: 9px;
+  }
+
+  .banner-next {
+    right: 9px;
+  }
+
+  .banner-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+  .banner-slider {
+    height: 320px;
+  }
+
+  .banner-slide > img {
+    object-position: center;
+  }
+
+  .banner-overlay {
+    background: rgba(30, 20, 45, 0.65);
+  }
+
+  .banner-content {
+    padding: 24px 42px;
+  }
+
+  .banner-tag {
+    margin-bottom: 10px;
+    padding: 6px 9px;
+    font-size: 9px;
+    letter-spacing: 0.8px;
+  }
+
+  .banner-content h1 {
+    margin-bottom: 10px;
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .banner-content p {
+    margin-bottom: 15px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .banner-btn {
+    min-height: 38px;
+    padding: 9px 14px;
+    font-size: 12px;
+  }
+
+  .banner-dots {
+    bottom: 10px;
+  }
+}
+
+/* Reduced motion preference */
+
+@media (prefers-reduced-motion: reduce) {
+  .banner-slide,
+  .banner-btn,
+  .banner-arrow,
+  .banner-dot {
+    transition: none;
+  }
+}
