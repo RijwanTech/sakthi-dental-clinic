@@ -1,5 +1,5 @@
 
-const API_URL = "https://sakthi-dental-clinic-api.onrender.com//api/appointments";
+const API_URL = "https://sakthi-dental-clinic-api.onrender.com/api/appointments";
 const LOGIN_URL = "login.html";
 
 const token = () => sessionStorage.getItem("adminToken");

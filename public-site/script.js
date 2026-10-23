@@ -287,7 +287,7 @@ if (contactForm) {
 
     try {
       const response = await fetch(
-        "https://sakthi-dental-clinic-api.onrender.com//api/appointments",
+        "https://sakthi-dental-clinic-api.onrender.com/api/appointments",
         {
           method: "POST",
           headers: {

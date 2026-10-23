@@ -1,5 +1,5 @@
 
-const API_URL = "https://sakthi-dental-clinic-api.onrender.com//api/auth/login";
+const API_URL = "https://sakthi-dental-clinic-api.onrender.com/api/auth/login";
 
 const loginForm = document.getElementById("loginForm");
 const loginButton = document.getElementById("loginButton");
