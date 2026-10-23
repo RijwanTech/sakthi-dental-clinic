@@ -1,0 +1,876 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Explore dental treatments at Sakthi Dental Clinic in Hosur, including teeth cleaning, fillings, root canal treatment, dental implants, braces and clear aligners."
+  >
+
+  <meta name="theme-color" content="#7351b5">
+
+  <title>Dental Treatments | Sakthi Dental Clinic, Hosur</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+
+  <style>
+    /* Treatments page styles */
+    .treatments-page {
+      background: #f8f6fc;
+      padding: 52px 0 76px;
+      min-height: 70vh;
+    }
+
+    .treatments-intro {
+      max-width: 780px;
+      margin: 0 auto 42px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .treatments-intro .eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: #7351b5;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .treatments-intro h1 {
+      margin: 0 0 16px;
+      color: #51358c;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.2;
+      overflow-wrap: break-word;
+    }
+
+    .treatments-intro p {
+      max-width: 680px;
+      margin: 0 auto;
+      color: #625d6b;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .treatment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+
+    .treatment-item {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      align-items: center;
+      gap: 34px;
+      padding: 26px;
+      background: #ffffff;
+      border: 1px solid #ece5f7;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(65, 42, 105, 0.055);
+      scroll-margin-top: 100px;
+    }
+
+    .treatment-item:nth-child(even) .treatment-photo {
+      order: 2;
+    }
+
+    .treatment-item:nth-child(even) .treatment-info {
+      order: 1;
+    }
+
+    .treatment-photo {
+      width: 100%;
+      min-width: 0;
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #f7f4fc;
+      border-radius: 13px;
+    }
+
+    .treatment-photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .treatment-info {
+      min-width: 0;
+    }
+
+    .treatment-number {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: #7351b5;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .treatment-info h2 {
+      margin: 0 0 14px;
+      color: #51358c;
+      font-size: clamp(23px, 2.4vw, 30px);
+      line-height: 1.35;
+      overflow-wrap: break-word;
+    }
+
+    .treatment-info p {
+      margin: 0 0 14px;
+      color: #514c5a;
+      font-size: 15px;
+      line-height: 1.85;
+      overflow-wrap: break-word;
+    }
+
+    .treatment-info .treatment-note {
+      margin-top: 4px;
+      color: #6b6575;
+      font-size: 14px;
+    }
+
+    .treatment-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .treatment-actions .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none;
+      line-height: 1.4;
+      white-space: normal;
+    }
+
+    .treatment-actions .btn-primary {
+      background: #7351b5;
+      color: #ffffff;
+      border: 1px solid #7351b5;
+    }
+
+    .treatment-actions .btn-primary:hover {
+      background: #51358c;
+      border-color: #51358c;
+    }
+
+    .treatments-contact {
+      margin-top: 52px;
+      padding: 36px 24px;
+      border-radius: 18px;
+      background: #eee7fb;
+      text-align: center;
+    }
+
+    .treatments-contact h2 {
+      margin: 0 0 12px;
+      color: #51358c;
+      font-size: clamp(24px, 3vw, 32px);
+      line-height: 1.3;
+    }
+
+    .treatments-contact p {
+      max-width: 650px;
+      margin: 0 auto 22px;
+      color: #514c5a;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .treatments-contact .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      background: #7351b5;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    @media (max-width: 760px) {
+      .treatments-page {
+        padding: 34px 0 48px;
+      }
+
+      .treatments-intro {
+        margin-bottom: 28px;
+      }
+
+      .treatment-list {
+        gap: 20px;
+      }
+
+      .treatment-item,
+      .treatment-item:nth-child(even) {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+        padding: 18px;
+      }
+
+      .treatment-item:nth-child(even) .treatment-photo,
+      .treatment-item:nth-child(even) .treatment-info {
+        order: initial;
+      }
+
+      .treatment-photo {
+        height: 240px;
+      }
+
+      .treatment-info h2 {
+        font-size: 24px;
+      }
+
+      .treatment-info p {
+        font-size: 15px;
+        line-height: 1.75;
+      }
+
+      .treatments-contact {
+        margin-top: 32px;
+        padding: 28px 18px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .treatment-item {
+        padding: 14px;
+        border-radius: 13px;
+      }
+
+      .treatment-photo {
+        height: 205px;
+      }
+
+      .treatment-actions {
+        flex-direction: column;
+      }
+
+      .treatment-actions .btn {
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+
+      <a class="brand" href="index.html" aria-label="Sakthi Dental Clinic home">
+        <img
+          src="images/clinic-logo.png"
+          alt="Sakthi Dental Clinic logo"
+          class="clinic-logo"
+        >
+
+        <span class="brand-text">
+          <strong>Sakthi Dental Clinic</strong>
+          <small>Your Smile, Our Priority</small>
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-controls="navLinks"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="treatments.html" class="active" aria-current="page">
+          Treatments
+        </a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn btn-primary nav-cta">
+          Book Appointment
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="treatments-page">
+
+    <section class="treatments-intro" aria-labelledby="treatments-title">
+      <span class="eyebrow">Complete Dental Care</span>
+
+      <h1 id="treatments-title">Our Dental Treatments</h1>
+
+      <p>
+        Discover our range of dental care services at Sakthi Dental Clinic,
+        Hosur. From routine cleaning to restorative and cosmetic treatments,
+        our team can help you understand the options suitable for your needs.
+      </p>
+    </section>
+
+    <div class="container">
+      <div class="treatment-list">
+
+        <!-- 1. Teeth Cleaning -->
+        <article class="treatment-item" id="teeth-cleaning">
+          <div class="treatment-photo">
+            <img
+              src="images/treatments/Teeth Cleaning.png"
+              alt="Professional teeth cleaning"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="treatment-info">
+            <span class="treatment-number">Treatment 01</span>
+            <h2>Teeth Cleaning</h2>
+            <p>
+              Professional teeth cleaning helps remove plaque and tartar
+              buildup from the teeth. Regular dental cleaning can support
+              healthier gums and better oral hygiene.
+            </p>
+            <p class="treatment-note">
+              Your dentist can recommend a cleaning schedule based on your
+              oral health.
+            </p>
+            <div class="treatment-actions">
+              <a class="btn btn-primary" href="contact.html">
+                Book an Appointment
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Tooth Filling -->
+        <article class="treatment-item" id="tooth-filling">
+          <div class="treatment-photo">
+            <img
+              src="images/treatments/Tooth-Filling.jpg"
+              alt="Tooth filling treatment"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="treatment-info">
+            <span class="treatment-number">Treatment 02</span>
+            <h2>Tooth Filling</h2>
+            <p>
+              Dental fillings repair teeth affected by cavities or minor
+              damage. The dentist removes the decayed portion and fills the
+              area with a suitable dental material.
+            </p>
+            <p class="treatment-note">
+              Early evaluation may help prevent further tooth damage.
+            </p>
+            <div class="treatment-actions">
+              <a class="btn btn-primary" href="contact.html">
+                Book an Appointment
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Teeth Extraction -->
+        <article class="treatment-item" id="tooth-extraction">
+          <div class="treatment-photo">
+            <img
+              src="images/treatments/Teeth Extraction.png"
+              alt="Dental tooth extraction"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="treatment-info">
+            <span class="treatment-number">Treatment 03</span>
+            <h2>Teeth Extraction</h2>
+            <p>
+              Tooth extraction involves removing a tooth when it cannot be
+              adequately preserved or when removal is recommended for oral
+              health reasons.
+            </p>
+            <p class="treatment-note">
+              The dentist will explain the procedure, aftercare and possible
+              replacement options where appropriate.
+            </p>
+            <div class="treatment-actions">
+              <a class="btn btn-primary" href="contact.html">
+                Book an Appointment
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Complete Denture -->
+        <article class="treatment-item" id="complete-denture">
+          <div class="treatment-photo">
+            <img
+              src="images/treatments/Artificial Complete Denture.png"
+              alt="Artificial complete dentures"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="treatment-info">
+            <span class="treatment-number">Treatment 04</span>
+            <h2>Complete Dentures</h2>
+            <p>
+              Complete dentures are removable dental appliances designed to
+              replace all teeth in an upper or lower jaw. They can help restore
+              appearance, speech and everyday chewing function.
+            </p>
+            <p class="treatment-note">
+              Fit and comfort depend on individual needs and the shape of the
+              gums and jaw.
+            </p>
+            <div class="treatment-actions">
+              <a class="btn btn-primary" href="contact.html">
+                Book an Appointment
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Dental Implants -->
+        <article class="treatment-item" id="dental-implants">
+          <div class="treatment-photo">
+            <img
+              src="images/treatments/Impants.png"
+              alt="Dental implant treatment"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="treatment-info">
+            <span class="treatment-number">Treatment 05</span>
+            <h2>Dental Implants</h2>
+            <p>
+              Dental implants are placed in the jawbone to support replacement
+              teeth. They may be considered for replacing missing teeth and
+              restoring chewing function.
+            </p>
+            <p class="treatment-note">
+              Suitability depends on bone health, general health and a
+              professional dental assessment.
+            </p>
+            <div class="treatment-actions">
+              <a class="btn btn-primary" href="contact.html">
+                Book an Appointment
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Laser Dentistry -->
+        <article class="treatment-item" id="laser-dentistry">
+          <div class="treatment-photo">
+            <img
+              src="images/treatments/Laser-Surgery.png"
+              alt="Laser dentistry procedure"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="treatment-info">
+            <span class="treatment-number">Treatment 06</span>
+            <h2>Laser Dentistry</h2>
+            <p>
+              Laser dentistry uses focused light energy for selected dental
+              and soft-tissue procedures. Whether it is appropriate depends on
+              the condition being treated and the dentist's assessment.
+            </p>
+            <p class="treatment-note">
+              Ask your dentist about the benefits, limitations and alternatives
+              for your specific procedure.
+            </p>
+            <div class="treatment-actions">
+              <a class="btn btn-primary" href="contact.html">
+                Book an Appointment
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Root Canal Treatment -->
+        <article class="treatment-item" id="root-canal">
+          <div class="treatment-photo">
+            <img
+              src="images/treatments/Root Canal Treatment.png"
+              alt="Root canal treatment"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="treatment-info">
+            <span class="treatment-number">Treatment 07</span>
+            <h2>Root Canal Treatment</h2>
+            <p>
+              Root canal treatment addresses infection or damage inside a
+              tooth. The affected tissue is treated, and the tooth is cleaned
+              and sealed to help preserve it.
+            </p>
+            <p class="treatment-note">
+              The final restoration depends on the condition and structure of
+              the treated tooth.
+            </p>
+            <div class="treatment-actions">
+              <a class="btn btn-primary" href="contact.html">
+                Book an Appointment
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8. Wisdom Teeth Removal -->
+        <article class="treatment-item" id="wisdom-tooth">
+          <div class="treatment-photo">
+            <img
+              src="images/treatments/Wisdom Teeth Removal.png"
+              alt="Wisdom teeth assessment and removal"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="treatment-info">
+            <span class="treatment-number">Treatment 08</span>
+            <h2>Wisdom Teeth Removal</h2>
+            <p>
+              Wisdom teeth may need removal when they are impacted, cause
+              repeated problems or affect nearby teeth. An examination and
+              dental X-rays may be required before treatment.
+            </p>
+            <p class="treatment-note">
+              Not every wisdom tooth needs to be removed.
+            </p>
+            <div class="treatment-actions">
+              <a class="btn btn-primary" href="contact.html">
+                Book an Appointment
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 9. Dental Bridge -->
+        <article class="treatment-item" id="dental-bridge">
+          <div class="treatment-photo">
+            <img
+              src="images/treatments/Fixed Partial Denture.png"
+              alt="Fixed partial denture or dental bridge"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="treatment-info">
+            <span class="treatment-number">Treatment 09</span>
+            <h2>Dental Bridge</h2>
+            <p>
+              A dental bridge replaces one or more missing teeth by supporting
+              an artificial tooth between neighbouring teeth or other suitable
+              dental supports.
+            </p>
+            <p class="treatment-note">
+              Your dentist can explain whether a bridge, implant or another
+              replacement option is suitable for you.
+            </p>
+            <div class="treatment-actions">
+              <a class="btn btn-primary" href="contact.html">
+                Book an Appointment
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 10. Teeth Whitening -->
+        <article class="treatment-item" id="teeth-whitening">
+          <div class="treatment-photo">
+            <img
+              src="images/treatments/Bleaching.png"
+              alt="Professional teeth whitening"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="treatment-info">
+            <span class="treatment-number">Treatment 10</span>
+            <h2>Teeth Whitening</h2>
+            <p>
+              Professional teeth whitening can help reduce certain types of
+              tooth discolouration. The results vary depending on the cause of
+              staining and the natural colour of the teeth.
+            </p>
+            <p class="treatment-note">
+              A dental check-up is recommended before whitening treatment.
+            </p>
+            <div class="treatment-actions">
+              <a class="btn btn-primary" href="contact.html">
+                Book an Appointment
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 11. Dental Veneers -->
+        <article class="treatment-item" id="dental-veneers">
+          <div class="treatment-photo">
+            <img
+              src="images/treatments/Veneer Treatment.jpg"
+              alt="Dental veneer treatment"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="treatment-info">
+            <span class="treatment-number">Treatment 11</span>
+            <h2>Dental Veneers</h2>
+            <p>
+              Veneers are thin coverings bonded to the front surface of
+              selected teeth. They may be used to improve the appearance of
+              certain stains, chips, gaps or shape differences.
+            </p>
+            <p class="treatment-note">
+              Your dentist will discuss the expected results and any
+              preparation that may be needed.
+            </p>
+            <div class="treatment-actions">
+              <a class="btn btn-primary" href="contact.html">
+                Book an Appointment
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 12. Pediatric Dentistry -->
+        <article class="treatment-item" id="pediatric-dentistry">
+          <div class="treatment-photo">
+            <img
+              src="images/treatments/Pediatric-dentistry.png"
+              alt="Dental care for children"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="treatment-info">
+            <span class="treatment-number">Treatment 12</span>
+            <h2>Pediatric Dentistry</h2>
+            <p>
+              Pediatric dental care focuses on children's oral health,
+              including check-ups, preventive guidance and assessment of
+              developing teeth and gums.
+            </p>
+            <p class="treatment-note">
+              Regular visits can help children develop healthy oral hygiene
+              habits from an early age.
+            </p>
+            <div class="treatment-actions">
+              <a class="btn btn-primary" href="contact.html">
+                Book an Appointment
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 13. Flap Surgery -->
+        <article class="treatment-item" id="flap-surgery">
+          <div class="treatment-photo">
+            <img
+              src="images/treatments/Flap-surgery.png"
+              alt="Periodontal flap surgery"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="treatment-info">
+            <span class="treatment-number">Treatment 13</span>
+            <h2>Flap Surgery</h2>
+            <p>
+              Periodontal flap surgery is a gum procedure that may be
+              recommended for selected cases of advanced gum disease. It
+              allows the dentist to access areas around the teeth for treatment.
+            </p>
+            <p class="treatment-note">
+              Treatment planning depends on gum health and the severity of the
+              condition.
+            </p>
+            <div class="treatment-actions">
+              <a class="btn btn-primary" href="contact.html">
+                Book an Appointment
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 14. Orthodontic Braces -->
+        <article class="treatment-item" id="orthodontic-braces">
+          <div class="treatment-photo">
+            <img
+              src="images/treatments/Orthodonic-Treatment.png"
+              alt="Orthodontic braces treatment"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="treatment-info">
+            <span class="treatment-number">Treatment 14</span>
+            <h2>Orthodontic Braces</h2>
+            <p>
+              Orthodontic braces gradually move teeth into a better position.
+              They may help address crowding, spacing and some bite alignment
+              concerns.
+            </p>
+            <p class="treatment-note">
+              Treatment duration and the best appliance depend on an
+              orthodontic assessment.
+            </p>
+            <div class="treatment-actions">
+              <a class="btn btn-primary" href="contact.html">
+                Book an Appointment
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 15. Clear Aligners -->
+        <article class="treatment-item" id="clear-aligners">
+          <div class="treatment-photo">
+            <img
+              src="images/treatments/Aligner.png"
+              alt="Clear dental aligners"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="treatment-info">
+            <span class="treatment-number">Treatment 15</span>
+            <h2>Clear Aligners</h2>
+            <p>
+              Clear aligners are removable transparent trays designed to
+              gradually move teeth. They may be an option for selected
+              alignment concerns following an orthodontic assessment.
+            </p>
+            <p class="treatment-note">
+              Wearing schedules and results depend on the treatment plan and
+              consistent use as directed.
+            </p>
+            <div class="treatment-actions">
+              <a class="btn btn-primary" href="contact.html">
+                Book an Appointment
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Appointment section -->
+      <section class="treatments-contact" aria-labelledby="appointment-title">
+        <h2 id="appointment-title">Looking for the Right Dental Treatment?</h2>
+
+        <p>
+          Every smile is different. Contact Sakthi Dental Clinic to discuss
+          your concerns and arrange a dental consultation.
+        </p>
+
+        <a class="btn" href="contact.html">Contact Our Clinic</a>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-about">
+          <a class="brand footer-brand" href="index.html">
+            <img
+              src="images/clinic-logo.png"
+              alt="Sakthi Dental Clinic logo"
+              class="clinic-logo"
+              loading="lazy"
+            >
+            <span class="brand-text">
+              <strong>Sakthi Dental Clinic</strong>
+              <small>Your Smile, Our Priority</small>
+            </span>
+          </a>
+
+          <p>
+            Supporting your oral health with dental care tailored to your
+            needs in Hosur, Tamil Nadu.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="treatments.html">Treatments</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p>
+            B2/8, SBM Layout, Anthivadi,<br>
+            Hosur, Tamil Nadu 635109, India
+          </p>
+          <p>
+            <a href="tel:+919862890897">+91 98628 90897</a>
+          </p>
+          <p>
+            <a href="tel:+919363298118">+91 93632 98118</a>
+          </p>
+          <p>
+            <a href="mailto:info@sakthidentalclinic.in">
+              info@sakthidentalclinic.in
+            </a>
+          </p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p>
+            &copy; <span id="currentYear">2026</span> Sakthi Dental Clinic.
+            All rights reserved.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

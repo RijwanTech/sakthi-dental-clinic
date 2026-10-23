@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f4f7fb" />
+  <meta
+    name="description"
+    content="Sakthi Dental Clinic administration and appointment management dashboard."
+  />
+  <title>Admin Dashboard | Sakthi Dental Clinic</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div class="app-shell">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <a class="brand" href="index.html" aria-label="Sakthi Dental Clinic home">
+        <span class="brand-logo-wrap">
+          <img
+            src="assets/clinic-logo.png"
+            alt="Sakthi Dental Clinic logo"
+            class="brand-logo"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+          />
+          <span class="brand-logo-fallback" aria-hidden="true">✚</span>
+        </span>
+
+        <span class="brand-text">
+          <strong>Sakthi Dental</strong>
+          <small>CLINIC ADMIN</small>
+        </span>
+      </a>
+
+      <div class="nav-label">WORKSPACE</div>
+
+      <nav class="navigation" aria-label="Main navigation">
+        <a class="nav-link active" href="#overview">
+          <span class="nav-icon" aria-hidden="true">▦</span>
+          <span>Overview</span>
+        </a>
+        <a class="nav-link" href="#appointments">
+          <span class="nav-icon" aria-hidden="true">▣</span>
+          <span>Appointments</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="help-card">
+          <span class="help-icon" aria-hidden="true">✦</span>
+          <strong>Clinic management</strong>
+          <p>Manage patient appointments and booking requests in one place.</p>
+        </div>
+
+        <button id="logoutButton" class="logout-button" type="button">
+          <span class="logout-icon" aria-hidden="true">↪</span>
+          <span>Log Out</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main dashboard -->
+    <main class="main-content">
+
+      <header class="topbar">
+        <div class="page-heading">
+          <p class="eyebrow">SAKTHI DENTAL CLINIC</p>
+          <h1>Admin Dashboard</h1>
+          <p class="subtitle">
+            Manage your clinic appointments and patient requests.
+          </p>
+        </div>
+
+        <div class="admin-profile">
+          <div class="avatar" aria-hidden="true">A</div>
+          <div class="profile-details">
+            <strong>Administrator</strong>
+            <small>Clinic management</small>
+          </div>
+        </div>
+      </header>
+
+      <!-- Welcome banner -->
+      <section id="overview" class="welcome-panel">
+        <div class="welcome-content">
+          <p class="welcome-tag">ADMIN WORKSPACE</p>
+          <h2>Your clinic, at a glance.</h2>
+          <p>
+            Review appointment requests and keep patient bookings up to date.
+          </p>
+        </div>
+        <div class="welcome-symbol" aria-hidden="true">✚</div>
+      </section>
+
+      <!-- Statistics -->
+      <section class="stats-grid" aria-label="Appointment statistics">
+
+        <article class="stat-card">
+          <div class="stat-heading">
+            <span>Total appointments</span>
+            <span class="stat-icon blue" aria-hidden="true">▣</span>
+          </div>
+          <p id="totalAppointments" class="stat-number">—</p>
+          <p class="stat-foot">Appointments retrieved</p>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-heading">
+            <span>Pending</span>
+            <span class="stat-icon amber" aria-hidden="true">◷</span>
+          </div>
+          <p id="pendingAppointments" class="stat-number">—</p>
+          <p class="stat-foot">Awaiting confirmation</p>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-heading">
+            <span>Confirmed</span>
+            <span class="stat-icon green" aria-hidden="true">✓</span>
+          </div>
+          <p id="confirmedAppointments" class="stat-number">—</p>
+          <p class="stat-foot">Confirmed bookings</p>
+        </article>
+
+        <article class="stat-card">
+          <div class="stat-heading">
+            <span>Completed</span>
+            <span class="stat-icon purple" aria-hidden="true">✦</span>
+          </div>
+          <p id="completedAppointments" class="stat-number">—</p>
+          <p class="stat-foot">Completed appointments</p>
+        </article>
+
+      </section>
+
+      <!-- Appointments -->
+      <section id="appointments" class="appointments-panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">PATIENT MANAGEMENT</p>
+            <h2>Appointments</h2>
+            <p class="subtitle">
+              Review requests and update booking status.
+            </p>
+          </div>
+
+          <button id="refreshButton" class="secondary-button" type="button">
+            <span aria-hidden="true">↻</span> Refresh
+          </button>
+        </div>
+
+        <!-- Search and filter -->
+        <div class="toolbar">
+          <label class="search-box">
+            <span aria-hidden="true">⌕</span>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Search patient, phone, email..."
+              autocomplete="off"
+              aria-label="Search appointments"
+            />
+          </label>
+
+          <label class="filter-label" for="statusFilter">Status</label>
+          <select id="statusFilter" aria-label="Filter by appointment status">
+            <option value="All">All statuses</option>
+            <option value="Pending">Pending</option>
+            <option value="Confirmed">Confirmed</option>
+            <option value="Completed">Completed</option>
+            <option value="Cancelled">Cancelled</option>
+          </select>
+        </div>
+
+        <div
+          id="dashboardMessage"
+          class="message"
+          role="status"
+          aria-live="polite"
+        >
+          Loading appointments...
+        </div>
+
+        <!-- Appointment table -->
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Patient</th>
+                <th>Treatment</th>
+                <th>Appointment date</th>
+                <th>Contact</th>
+                <th>Status</th>
+                <th>Update status</th>
+              </tr>
+            </thead>
+
+            <tbody id="appointmentsTableBody">
+              <tr>
+                <td colspan="6" class="empty-cell">
+                  Loading appointments...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-footer">
+          <span id="resultsCount">0 appointments</span>
+          <span>Data from your clinic database</span>
+        </div>
+      </section>
+
+      <footer class="page-footer">
+        <span class="footer-brand">
+          <img
+            src="assets/clinic-logo.png"
+            alt=""
+            class="footer-logo"
+            onerror="this.style.display='none';"
+          />
+          Sakthi Dental Clinic
+        </span>
+        <span>Admin Portal</span>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
